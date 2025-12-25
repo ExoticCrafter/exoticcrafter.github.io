@@ -1,393 +1,246 @@
-/* THEME: WATCH_DOGS_2 (DedSec) x HONKAI: STAR RAIL (Astral Express)
-   AUTHOR: Gemini (Assistant)
-*/
+/* Dark Futuristic Theme (Original) */
 
+/* Reset and Base Styles */
 :root {
-    /* --- PALETTE: DedSec Chaos --- */
-    --wd-cyan: #00f0ff;
-    --wd-pink: #ff0055;
-    --wd-yellow: #fcee0a;
-    --wd-dark: #111;
-    
-    /* --- PALETTE: Astral Order --- */
-    --hsr-gold: #cba135;
-    --hsr-glass: rgba(20, 20, 35, 0.7);
-    --hsr-border: rgba(255, 255, 255, 0.1);
-    
-    /* --- FONTS --- */
-    --font-graffiti: 'Permanent Marker', cursive; /* WD2 Scribbles */
-    --font-ui: 'Rajdhani', sans-serif; /* HSR System Text */
-    --font-code: 'Share Tech Mono', monospace; /* Terminal */
-    --font-header: 'Orbitron', sans-serif; /* Sci-Fi Headers */
+    --bg-color: #0b0c10;
+    --card-bg: #1f2833;
+    --text-primary: #c5c6c7;
+    --neon-cyan: #66fcf1;
+    --neon-purple: #bc13fe;
+    --dark-accent: #45a29e;
+    --font-head: 'Orbitron', sans-serif;
+    --font-body: 'Roboto Mono', monospace;
 }
 
-/* --- GLOBAL RESET & BODY --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: crosshair; /* Hacker feel */
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #050505;
-    background-image: 
-        radial-gradient(circle at 50% 50%, #1a1a2e 0%, #000 100%), /* Space depth */
-        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px), /* Grid Y */
-        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px); /* Grid X */
-    background-size: 100% 100%, 40px 40px, 40px 40px;
-    color: #e0e0e0;
-    font-family: var(--font-ui);
-    overflow-x: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
 }
 
-/* --- SCROLLBAR (Chrome/Safari) --- */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #000;
-}
-::-webkit-scrollbar-thumb {
-    background: var(--wd-yellow);
-    border-radius: 0;
-}
-
-/* --- TYPOGRAPHY & GLITCH EFFECTS --- */
-h1, h2, h3 {
-    font-family: var(--font-header);
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-head);
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* The Glitch Animation */
-@keyframes glitch-skew {
-    0% { transform: skew(0deg); }
-    20% { transform: skew(-20deg); }
-    40% { transform: skew(20deg); }
-    60% { transform: skew(0deg); }
-    100% { transform: skew(0deg); }
-}
-
-.section-title {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 50px;
-    position: relative;
-    display: inline-block;
-    border-bottom: 3px solid var(--wd-cyan);
-    padding-bottom: 10px;
-}
-
-/* DedSec style scribble over titles */
-.section-title::after {
-    content: "/// SYSTEM_OVERRIDE";
-    position: absolute;
-    top: -20px;
-    left: 0;
-    font-family: var(--font-code);
-    font-size: 0.9rem;
-    color: var(--wd-pink);
-    opacity: 0.8;
-}
-
-/* --- NAVIGATION (Holographic Bar) --- */
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px); /* Glassmorphism */
-    border-bottom: 1px solid var(--hsr-border);
+    background: rgba(11, 12, 16, 0.95);
+    border-bottom: 2px solid var(--neon-cyan);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 nav .logo {
-    font-family: var(--font-graffiti);
-    font-size: 2rem;
-    color: var(--wd-yellow);
-    transform: rotate(-3deg); /* Slight chaotic tilt */
-    text-shadow: 2px 2px 0px var(--wd-pink);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
 }
 
 nav ul {
+    list-style: none;
     display: flex;
     gap: 30px;
-    list-style: none;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    font-family: var(--font-code);
-    font-size: 1.1rem;
-    position: relative;
-    transition: 0.3s;
-}
-
-nav a::before {
-    content: '[';
-    margin-right: 5px;
-    color: var(--wd-cyan);
-    opacity: 0;
-    transition: 0.3s;
-}
-nav a::after {
-    content: ']';
-    margin-left: 5px;
-    color: var(--wd-cyan);
-    opacity: 0;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: var(--wd-cyan);
-    text-shadow: 0 0 10px var(--wd-cyan);
-}
-nav a:hover::before, nav a:hover::after {
-    opacity: 1;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 5px var(--neon-cyan);
 }
 
-/* --- HERO SECTION --- */
+/* Hero Section */
 #hero {
-    height: 90vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: radial-gradient(circle at center, #1f2833 0%, #0b0c10 70%);
     text-align: center;
-    position: relative;
 }
 
-/* Glitch Title */
 .glitch {
-    font-size: 4rem;
-    font-weight: 900;
+    font-size: 3rem;
     position: relative;
     color: white;
-    mix-blend-mode: hard-light;
-}
-
-.glitch::before, .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #050505; 
-}
-
-.glitch::before {
-    left: 2px;
-    text-shadow: -1px 0 var(--wd-pink);
-    animation: glitch-skew 2s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-    left: -2px;
-    text-shadow: 1px 0 var(--wd-cyan);
-    animation: glitch-skew 3s infinite linear alternate-reverse;
 }
 
 .subtitle {
-    margin-top: 20px;
-    font-family: var(--font-code);
-    color: var(--hsr-gold);
     font-size: 1.2rem;
-    border: 1px solid var(--hsr-gold);
-    padding: 10px 20px;
-    display: inline-block;
-    background: rgba(203, 161, 53, 0.1);
+    color: var(--neon-cyan);
+    margin-top: 10px;
 }
 
-/* --- PROFILE SECTION (HSR Databank Style) --- */
+/* Section Styling */
 .container {
-    padding: 100px 10%;
+    padding: 80px 10%;
+    border-bottom: 1px solid #1f2833;
 }
 
-.profile-card {
-    /* HSR Angled Corners using clip-path */
-    clip-path: polygon(
-        20px 0, 100% 0, 
-        100% calc(100% - 20px), calc(100% - 20px) 100%, 
-        0 100%, 0 20px
-    );
-    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-    border: 1px solid var(--wd-cyan); /* Neon border overlap */
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--neon-purple);
+    padding-left: 15px;
 }
 
-.img-placeholder {
-    font-size: 6rem;
-    color: var(--wd-yellow);
-    filter: drop-shadow(0 0 10px var(--wd-yellow));
-    animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-
-.profile-details h4 {
-    color: var(--wd-cyan);
-    margin-top: 20px;
-    border-bottom: 1px dashed var(--wd-pink);
-    display: inline-block;
-}
-
-.skill-list li {
-    font-family: var(--font-code);
-    color: #aaa;
-    margin: 5px 0;
-}
-.skill-list li::before {
-    content: ">>";
-    color: var(--wd-pink);
-    margin-right: 10px;
-}
-
-/* --- PROJECTS GRID (DedSec Monitor Wall) --- */
-.project-grid {
+/* Profile Grid */
+.profile-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 2fr;
     gap: 40px;
 }
 
+.profile-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--dark-accent);
+    box-shadow: 0 0 15px rgba(69, 162, 158, 0.2);
+}
+
+.img-placeholder {
+    font-size: 5rem;
+    color: var(--neon-cyan);
+    margin-bottom: 20px;
+}
+
+.skill-list {
+    list-style: none;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.skill-list li::before {
+    content: "> ";
+    color: var(--neon-purple);
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
 .project-card {
-    background: rgba(10, 10, 10, 0.9);
-    border: 1px solid #333;
-    padding: 20px;
-    position: relative;
-    transition: 0.3s;
-    overflow: hidden;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid transparent;
 }
 
-/* Hover Effect: Card Lights Up */
 .project-card:hover {
-    border-color: var(--wd-cyan);
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
     transform: translateY(-5px);
-}
-
-.project-card::before {
-    /* Stripe pattern overlay */
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(0, 240, 255, 0.05) 10px,
-        rgba(0, 240, 255, 0.05) 20px
-    );
-    pointer-events: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    color: var(--neon-purple);
     margin-bottom: 15px;
-}
-
-.card-header i {
-    font-size: 2rem;
-    color: var(--hsr-gold); /* Star Rail Gold Icon */
+    font-size: 1.5rem;
 }
 
 .tag {
-    background: var(--wd-pink);
-    color: #000;
-    font-weight: bold;
-    padding: 2px 8px;
-    font-family: var(--font-graffiti);
-    font-size: 0.9rem;
-    transform: rotate(-2deg);
+    font-size: 0.8rem;
+    background: rgba(188, 19, 254, 0.2);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-family: var(--font-body);
 }
 
 .btn-glow {
-    display: block;
+    display: inline-block;
     margin-top: 20px;
-    text-align: center;
-    padding: 12px;
+    padding: 10px 20px;
     background: transparent;
-    border: 2px solid var(--wd-yellow);
-    color: var(--wd-yellow);
-    font-family: var(--font-code);
-    font-weight: bold;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
     text-decoration: none;
     text-transform: uppercase;
-    transition: 0.2s;
-    position: relative;
-    z-index: 2;
-}
-
-.btn-glow:hover {
-    background: var(--wd-yellow);
-    color: #000;
-    box-shadow: 5px 5px 0px var(--wd-cyan); /* Hard offset shadow */
-    transform: translate(-2px, -2px);
-}
-
-/* --- REFLECTIONS --- */
-.reflection-box {
-    background: linear-gradient(90deg, rgba(20,20,20,0.9) 0%, rgba(20,20,20,0.4) 100%);
-    border-left: 5px solid var(--hsr-gold);
-    padding: 30px;
-    margin-bottom: 20px;
-    font-family: var(--font-ui);
-    position: relative;
-}
-
-.reflection-box::after {
-    /* Tiny decorative corner */
-    content: "";
-    position: absolute;
-    top: 0; right: 0;
-    width: 20px; height: 20px;
-    border-top: 2px solid var(--hsr-gold);
-    border-right: 2px solid var(--hsr-gold);
-}
-
-/* --- FOOTER (Terminal) --- */
-footer {
-    background: #000;
-    padding: 60px 20px;
-    text-align: center;
-    border-top: 2px solid var(--wd-cyan);
-}
-
-.social-links a {
-    color: #555;
-    font-size: 2rem;
-    margin: 0 20px;
+    font-size: 0.9rem;
     transition: 0.3s;
 }
 
+.btn-glow:hover {
+    background: var(--neon-cyan);
+    color: #0b0c10;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/* Reflection Section */
+.reflection-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.reflection-box {
+    background: linear-gradient(90deg, var(--card-bg) 0%, transparent 100%);
+    padding: 30px;
+    border-left: 4px solid var(--neon-cyan);
+}
+
+/* Footer */
+footer {
+    padding: 50px;
+    text-align: center;
+    background: #000;
+}
+
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
 .social-links a:hover {
-    color: var(--wd-cyan);
-    filter: drop-shadow(0 0 8px var(--wd-cyan));
+    color: var(--neon-purple);
 }
 
-.copyright {
-    margin-top: 30px;
-    font-family: var(--font-code);
-    color: #444;
-}
-
-/* --- RESPONSIVE --- */
+/* Responsive */
 @media (max-width: 768px) {
-    .glitch { font-size: 2.5rem; }
-    nav { flex-direction: column; gap: 20px; }
-    .profile-grid { display: block; }
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .glitch {
+        font-size: 2rem;
+    }
 }
