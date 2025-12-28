@@ -672,3 +672,12 @@ footer {
     transform: scale(1.02); /* Subtle zoom on hover */
     border-color: var(--primary-color);
 }
+/* Style for single full-width blog images */
+.single-media {
+    width: 100%;
+    height: auto;        /* Maintains aspect ratio */
+    border-radius: 12px; /* Smooth corners */
+    margin: 20px 0;      /* Spacing above and below */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3); /* Nice shadow depth */
+    display: block;
+}
