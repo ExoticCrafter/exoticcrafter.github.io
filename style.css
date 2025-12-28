@@ -704,13 +704,29 @@ footer {
     justify-content: center;
     margin-top: 30px;
     width: 100%;
-    background-color: white; /* White background makes the embed pop */
+    background-color: white;
     padding: 15px;
     border-radius: 12px;
+    /* Prevent overflow issues */
+    overflow: hidden; 
 }
 
 .linkedin-wrapper iframe {
     width: 100%;
-    max-width: 504px; /* Standard LinkedIn Embed Max-Width */
+    max-width: 504px;
     border-radius: 8px;
+    border: none;
+}
+
+/* Mobile Optimization: Maximize Width */
+@media (max-width: 600px) {
+    .linkedin-wrapper {
+        /* Remove padding on small screens so the post uses full width */
+        padding: 5px; 
+    }
+    
+    .linkedin-wrapper iframe {
+        /* Adjust height for mobile if text wrapping makes it longer */
+        min-height: 750px; 
+    }
 }
