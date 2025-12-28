@@ -11,7 +11,7 @@ This project was designed to showcase my academic journey as a Data Engineering 
 **Key Sections:**
 * **Home:** Introduction and social links.
 * **About:** Education history and technical skills.
-* **TIS Portfolio:** Specific assignments (Poster, Video, Reports) and reflections for SECP1513.
+* **Portfolio:** Specific assignments (Poster, Video, Reports) and reflections for SECP1513.
 * **Experience:** Leadership roles and co-curricular involvement.
 
 ## 🛠️ Tech Stack
