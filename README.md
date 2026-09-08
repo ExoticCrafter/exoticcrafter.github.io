@@ -21,10 +21,4 @@ This site is built using vanilla web technologies to ensure a lightweight and re
 * ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white) **Styling**
 * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E) **Interactivity**
 
-## 📂 Project Structure
-```text
-/
-├── index.html      # Main HTML structure
-├── style.css       # Global styles (Femboy Theme)
-├── script.js       # Typing animation and scroll logic
-└── README.md       # Repository documentation
+
